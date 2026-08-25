@@ -1,0 +1,66 @@
+{
+  "batch": "A",
+  "contract_address": "0xeb00EEb22C7cAaF1A7B056fBbC0aCDef8F4da2C2",
+  "contract_source": {
+    "deployed_source_sha256": "e3f911fee1277bc92736b4621b5b00bb6a1b1ce450d53f0ae91045f6f52dbef1",
+    "path": "contracts/cycle_cut.py",
+    "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+    "source_exact_for_deployment": true,
+    "source_sha256": "e3f911fee1277bc92736b4621b5b00bb6a1b1ce450d53f0ae91045f6f52dbef1"
+  },
+  "deployment_transaction_hash": "0xb81ca69509e213de880e22eddda9dbaa7edb541d35abcc0b822a7839ba70f9d7",
+  "explorer": {
+    "contract": "https://explorer-studio.genlayer.com/address/0xeb00EEb22C7cAaF1A7B056fBbC0aCDef8F4da2C2",
+    "deployment_transaction": "https://explorer-studio.genlayer.com/tx/0xb81ca69509e213de880e22eddda9dbaa7edb541d35abcc0b822a7839ba70f9d7",
+    "intelligent_transaction": "https://explorer-studio.genlayer.com/tx/0x42c7190bf0cb432824905aa9e1241032a80722f30ac2e1d27018dab81117be00"
+  },
+  "intelligent_transaction_hash": "0x42c7190bf0cb432824905aa9e1241032a80722f30ac2e1d27018dab81117be00",
+  "network": {
+    "chain_id": 61999,
+    "name": "studionet",
+    "rpc": "https://studio.genlayer.com/api"
+  },
+  "repository": "cyclecut",
+  "schema": "genlayer-intelligent-contract-deployment/v2",
+  "setup_transaction_hashes": [],
+  "source": {
+    "deployed_source_sha256": "e3f911fee1277bc92736b4621b5b00bb6a1b1ce450d53f0ae91045f6f52dbef1",
+    "schema_methods_verified": [
+      "cut_suggested",
+      "infer_map",
+      "next_cut"
+    ],
+    "source_sha256": "e3f911fee1277bc92736b4621b5b00bb6a1b1ce450d53f0ae91045f6f52dbef1"
+  },
+  "tooling": {
+    "genlayer_test": "0.29.2",
+    "genvm_linter": "0.11.0",
+    "pyright": "1.1.411",
+    "pytest": "9.1.1",
+    "studionet_poll_interval_ms": 6000
+  },
+  "verification": {
+    "deployed_source_exact": true,
+    "execution_success": true,
+    "latest_final_readback": true,
+    "observed": {
+      "edge_count": 3,
+      "next_cut": [
+        2,
+        0
+      ],
+      "state": "CYCLIC"
+    },
+    "schema_read": true,
+    "status": "FINALIZED"
+  },
+  "verified_at": "2026-08-25T21:17:03.536656Z",
+  "wallet_addresses": [
+    "0x0B37c405957368d33554245b9C4b184aF689E42f",
+    "0xC2AE33250d2D30CB658Caef1340b21442406bDa9",
+    "0xa38Fb7265829DD50B28A3324F9826770f43408e9",
+    "0x3d766d9D9E47781DA5bbB28455AA235F90B9A7F8",
+    "0x143a58F4e98dF17f873D19f337a4de459fF1769d"
+  ],
+  "wallet_policy": "repository-specific disposable bundle outside workspace; no cross-repository reuse"
+}
