@@ -1,33 +1,24 @@
-# Design boundary
+# Design
 
-## Mechanism fingerprint
+## Mechanism
 
-Consensus derives directed dependencies; deterministic cycle detection exposes one concrete feedback edge at a time until a topological order can be sealed.
+CycleCut combines consensus-based semantic edge inference with deterministic graph processing. Validator output is useful only after it passes a closed schema: exactly one `edges` field, integer pairs only, valid non-self endpoints, no duplicates, and at most 36 edges.
 
-This is the contract's reusable mechanism, not a renamed domain wrapper.
+Edges are sorted before storage. Depth-first coloring selects a reproducible back edge for the next cut. Once no cycle remains, Kahn's algorithm emits a reproducible topological order using the original node index as the tie-breaker.
 
-## Consensus boundary
+## State machine
 
-Validators independently re-execute the bounded semantic task and the custom validator rejects malformed or materially different output.
-
-Every model response is normalized to an exact JSON shape, bounded list sizes,
-closed indexes or bands, and deterministic ordering before it can affect state.
-Inputs are explicitly framed as untrusted data rather than instructions.
+`infer_map` creates either `CYCLIC` or `READY`. Each owner-authorized `cut_suggested` transition remains `CYCLIC` or becomes `READY`. Only `READY` can transition to immutable `SEALED` through `seal_order`.
 
 ## On-chain responsibilities
 
-- validate bounded public inputs and isolate wallet roles;
-- run the one semantic operation through GenLayer consensus;
-- execute the mechanism-specific deterministic algorithm;
-- persist independently keyed records and expose typed views;
-- reject duplicate actions and invalid state transitions.
+- bound and normalize public inputs;
+- reach validator consensus on semantic dependencies;
+- reject malformed model output;
+- detect cycles and propose deterministic cuts;
+- enforce owner-only mutation;
+- store cut reasons and seal a deterministic order.
 
 ## Off-chain responsibilities
 
-User interface, login, private drafts, source collection, provenance display,
-notifications, analytics, and any real-world action remain off-chain.
-
-## Non-goals
-
-No payment, custody, identity attestation, legal ruling, physical verification,
-professional advice, or guarantee that caller-supplied facts are true.
+Interfaces, private drafting, source provenance, notifications, graph visualization, and decisions that rely on the final order remain off-chain.

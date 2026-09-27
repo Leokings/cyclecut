@@ -2,32 +2,24 @@ Project name: CycleCut
 
 Category: Intelligent Contracts
 
-Batch: A
+One-line description: Consensus dependency inference with deterministic cycle cutting and topological sealing.
 
-One-line description: Semantic dependency cycle cutting.
+What it does: GenLayer validators infer a bounded dependency graph from public planning text. Contract code deterministically detects a feedback edge, records each owner-approved cut, and seals a stable topological order.
 
-What it does: Consensus derives directed dependencies; deterministic cycle detection exposes one concrete feedback edge at a time until a topological order can be sealed.
+Why GenLayer: The dependency meaning is semantic; cycle detection, authorization, validation, and ordering remain deterministic on-chain.
 
-Why GenLayer: GenLayer consensus performs the bounded semantic step, then deterministic contract code executes and stores the mechanism-specific result.
+Repository: https://github.com/Leokings/cyclecut
 
-Reusable: Yes. One deployment supports many independently keyed records and callers; the live fixture is only an example.
+Contract source: `contracts/cycle_cut.py`
 
-Repository: https://github.com/Leokings/cyclecut (private; reviewers require read access).
+Source SHA-256: `15c543e7172753a0a72e93b151b6f3158fac7ffdcdb0cc052e239ac3a0bc0154`
 
-Contract source: contracts/cycle_cut.py
+StudioNet contract: https://explorer-studio.genlayer.com/address/0x379a0039589282Ed571Ae11AB9AdBa1B3c4d8eae
 
-Source SHA-256: e3f911fee1277bc92736b4621b5b00bb6a1b1ce450d53f0ae91045f6f52dbef1
+Deployment transaction: https://explorer-studio.genlayer.com/tx/0x40b618041aaae96e028c80af506aca0a38aa79abd0d796b5eb697bbc5fb79f14
 
-StudioNet contract: https://explorer-studio.genlayer.com/address/0xeb00EEb22C7cAaF1A7B056fBbC0aCDef8F4da2C2
+Intelligent transaction: https://explorer-studio.genlayer.com/tx/0xbb8c4366354fa5b332afddb1f073cfd0ce567197f57c10200b9c9dc998de6bfc
 
-Deployment transaction: https://explorer-studio.genlayer.com/tx/0xb81ca69509e213de880e22eddda9dbaa7edb541d35abcc0b822a7839ba70f9d7
+Verification: lint PASS; strict typecheck PASS; 16 direct tests PASS; five-validator integration PASS; complete finalized StudioNet infer/cut/seal flow PASS; latest-final readback PASS; deployed-source and schema equality PASS.
 
-Intelligent transaction: https://explorer-studio.genlayer.com/tx/0x42c7190bf0cb432824905aa9e1241032a80722f30ac2e1d27018dab81117be00
-
-Verification: GenVM lint PASS; strict typecheck PASS; 4 direct tests PASS; five-validator GLSim PASS; finalized StudioNet intelligent write and latest-final readback PASS; exact deployed-source and schema verification PASS.
-
-Originality: Compared with 161 workspace contract sources. Nearest pre-existing structural score is 0.180883; mechanism and source hash are distinct.
-
-Data boundary: Caller-supplied public data only. No external source fetching, funds, identity attestation, legal effect, or private-data guarantee.
-
-Plain-text portal fields: SUBMISSION.txt. Notes / Description is within the 1,000-character form limit.
+Data boundary: Public caller-supplied text only. No source authentication, funds, private-data guarantee, or legal effect.

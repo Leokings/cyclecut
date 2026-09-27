@@ -1,20 +1,20 @@
 {
   "batch": "A",
-  "contract_address": "0xeb00EEb22C7cAaF1A7B056fBbC0aCDef8F4da2C2",
+  "contract_address": "0x379a0039589282Ed571Ae11AB9AdBa1B3c4d8eae",
   "contract_source": {
-    "deployed_source_sha256": "e3f911fee1277bc92736b4621b5b00bb6a1b1ce450d53f0ae91045f6f52dbef1",
+    "deployed_source_sha256": "15c543e7172753a0a72e93b151b6f3158fac7ffdcdb0cc052e239ac3a0bc0154",
     "path": "contracts/cycle_cut.py",
     "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
     "source_exact_for_deployment": true,
-    "source_sha256": "e3f911fee1277bc92736b4621b5b00bb6a1b1ce450d53f0ae91045f6f52dbef1"
+    "source_sha256": "15c543e7172753a0a72e93b151b6f3158fac7ffdcdb0cc052e239ac3a0bc0154"
   },
-  "deployment_transaction_hash": "0xb81ca69509e213de880e22eddda9dbaa7edb541d35abcc0b822a7839ba70f9d7",
+  "deployment_transaction_hash": "0x40b618041aaae96e028c80af506aca0a38aa79abd0d796b5eb697bbc5fb79f14",
   "explorer": {
-    "contract": "https://explorer-studio.genlayer.com/address/0xeb00EEb22C7cAaF1A7B056fBbC0aCDef8F4da2C2",
-    "deployment_transaction": "https://explorer-studio.genlayer.com/tx/0xb81ca69509e213de880e22eddda9dbaa7edb541d35abcc0b822a7839ba70f9d7",
-    "intelligent_transaction": "https://explorer-studio.genlayer.com/tx/0x42c7190bf0cb432824905aa9e1241032a80722f30ac2e1d27018dab81117be00"
+    "contract": "https://explorer-studio.genlayer.com/address/0x379a0039589282Ed571Ae11AB9AdBa1B3c4d8eae",
+    "deployment_transaction": "https://explorer-studio.genlayer.com/tx/0x40b618041aaae96e028c80af506aca0a38aa79abd0d796b5eb697bbc5fb79f14",
+    "intelligent_transaction": "https://explorer-studio.genlayer.com/tx/0xbb8c4366354fa5b332afddb1f073cfd0ce567197f57c10200b9c9dc998de6bfc"
   },
-  "intelligent_transaction_hash": "0x42c7190bf0cb432824905aa9e1241032a80722f30ac2e1d27018dab81117be00",
+  "intelligent_transaction_hash": "0xbb8c4366354fa5b332afddb1f073cfd0ce567197f57c10200b9c9dc998de6bfc",
   "network": {
     "chain_id": 61999,
     "name": "studionet",
@@ -22,45 +22,52 @@
   },
   "repository": "cyclecut",
   "schema": "genlayer-intelligent-contract-deployment/v2",
-  "setup_transaction_hashes": [],
+  "setup_transaction_hashes": [
+    "0x64cf75afdd6863c37ad5e799321503c69462117c391f3298526a1961c90efce6",
+    "0x7da80de302fe91d5a8bf4eab2135980f03329a1c1a4b8de690237f74c392c05d"
+  ],
   "source": {
-    "deployed_source_sha256": "e3f911fee1277bc92736b4621b5b00bb6a1b1ce450d53f0ae91045f6f52dbef1",
+    "deployed_source_sha256": "15c543e7172753a0a72e93b151b6f3158fac7ffdcdb0cc052e239ac3a0bc0154",
     "schema_methods_verified": [
       "cut_suggested",
+      "get_map",
       "infer_map",
-      "next_cut"
+      "is_sealed_order",
+      "next_cut",
+      "seal_order"
     ],
-    "source_sha256": "e3f911fee1277bc92736b4621b5b00bb6a1b1ce450d53f0ae91045f6f52dbef1"
+    "source_sha256": "15c543e7172753a0a72e93b151b6f3158fac7ffdcdb0cc052e239ac3a0bc0154"
   },
   "tooling": {
     "genlayer_test": "0.29.2",
     "genvm_linter": "0.11.0",
     "pyright": "1.1.411",
-    "pytest": "9.1.1",
-    "studionet_poll_interval_ms": 6000
+    "pytest": "9.1.1"
   },
   "verification": {
+    "agreeing_validator_executions_successful": true,
     "deployed_source_exact": true,
     "execution_success": true,
     "latest_final_readback": true,
     "observed": {
-      "edge_count": 3,
-      "next_cut": [
-        2,
-        0
+      "cuts": [
+        {
+          "edge": [2, 0],
+          "reason": "Remove the deterministic feedback edge proposed by the contract."
+        }
       ],
-      "state": "CYCLIC"
+      "edges": [[0, 1], [1, 2]],
+      "order": [0, 1, 2],
+      "schema": "cyclecut/map/v2",
+      "state": "SEALED"
     },
     "schema_read": true,
-    "status": "FINALIZED"
+    "status": "FINALIZED",
+    "validator_quorum_checked": true
   },
-  "verified_at": "2026-08-25T21:17:03.536656Z",
+  "verified_at": "2026-09-27T18:26:31+01:00",
   "wallet_addresses": [
-    "0x0B37c405957368d33554245b9C4b184aF689E42f",
-    "0xC2AE33250d2D30CB658Caef1340b21442406bDa9",
-    "0xa38Fb7265829DD50B28A3324F9826770f43408e9",
-    "0x3d766d9D9E47781DA5bbB28455AA235F90B9A7F8",
-    "0x143a58F4e98dF17f873D19f337a4de459fF1769d"
+    "0x797d3B25fB2cCA0Ff93F60df1910267f3822D655"
   ],
-  "wallet_policy": "repository-specific disposable bundle outside workspace; no cross-repository reuse"
+  "wallet_policy": "Test role loaded from the OS credential vault; no private key or mnemonic is stored in this repository."
 }

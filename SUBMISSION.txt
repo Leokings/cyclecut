@@ -1,13 +1,13 @@
-2. CycleCut
+CycleCut
 
 Contribution Date
-08/25/2026
+09/27/2026
 
 Title
-CycleCut - Semantic dependency cycle cutting
+CycleCut - Consensus dependency cycle cutting
 
 Notes / Description
-Built CycleCut, a reusable GenLayer intelligent contract for semantic dependency cycle cutting. Consensus derives directed dependencies; deterministic cycle detection exposes one concrete feedback edge at a time until a topological order can be sealed. One deployment supports multiple independently keyed records and callers. Inputs are public, caller-supplied snapshots; the contract does not automatically fetch or authenticate sources and moves no funds. GenVM lint, strict type checking, 4 direct tests and one five-validator GLSim flow passed. StudioNet verified successful finalized intelligent execution, final-state readback and matching deployed source.
+Built CycleCut, a reusable GenLayer Intelligent Contract that derives a bounded dependency graph from public planning text, detects feedback cycles deterministically, proposes one concrete edge at a time, records owner-approved cuts, and seals a stable topological order. The contract separates the semantic validator task from deterministic validation, authorization, cycle detection, and ordering. GenVM lint and strict type checking pass; 16 direct security tests and a five-validator integration flow pass. A fresh StudioNet run finalized inference, cut [2,0], sealed order [0,1,2], read the final state, and proved the deployed source exactly matches the repository.
 
 Evidence 1 Type
 GitHub Repository
@@ -25,16 +25,16 @@ Evidence 3 Type
 GenLayer Studio Contract
 
 Evidence 3 URL
-https://studio.genlayer.com/?import-contract=0xeb00EEb22C7cAaF1A7B056fBbC0aCDef8F4da2C2
+https://studio.genlayer.com/?import-contract=0x379a0039589282Ed571Ae11AB9AdBa1B3c4d8eae
 
 Evidence 4 Type
 GenLayer Explorer Contract
 
 Evidence 4 URL
-https://explorer-studio.genlayer.com/address/0xeb00EEb22C7cAaF1A7B056fBbC0aCDef8F4da2C2
+https://explorer-studio.genlayer.com/address/0x379a0039589282Ed571Ae11AB9AdBa1B3c4d8eae
 
 Evidence 5 Type
 Other
 
 Evidence 5 URL
-https://explorer-studio.genlayer.com/tx/0x42c7190bf0cb432824905aa9e1241032a80722f30ac2e1d27018dab81117be00
+https://explorer-studio.genlayer.com/tx/0xbb8c4366354fa5b332afddb1f073cfd0ce567197f57c10200b9c9dc998de6bfc
